@@ -8,7 +8,8 @@
 #
 # You will need to install the library "testthat"
 # and run the command:
-# auto_test('.', '.') in an R process (console)
+# auto_test('.', '.') in an R process (console).
+#
 
 
 # 1)
@@ -114,8 +115,9 @@
 ##     UseMethod("center")
 ## }
 
-# 2 previous tests should now fail. Now change your first
-# "center" function to be named "center.list" and your second
+# 2 previous tests should now fail. You now have three functions
+# called "center" in this file! Change the first
+# "center" function to be named "center.list" and the second
 # from "center" to be named "center.variables".
 #
 # Like magic, your tests should pass again! What's happening?
