@@ -18,10 +18,6 @@
 # vector of length N, full of random numbers
 # of your choosing.
 
-generate_numbers <- function(N) {
-    rnorm(N)
-}
-
 
 # 2)
 # Write a function, called generate_variables
@@ -30,9 +26,7 @@ generate_numbers <- function(N) {
 # two values: X and Y, which should
 # each have a vector of length N of
 # random variables.
-generate_variables <- function(N) {
-    make_variables(X=generate_numbers(N), Y=generate_numbers(N))
-}
+
 
 
 # 3)
@@ -44,10 +38,7 @@ generate_variables <- function(N) {
 # from each value in the vector.
 # Call the function "center".
 
-center.list <- function(vars) {
-    list(X = vars$X - mean(vars$X),
-         Y = vars$Y - mean(vars$Y))
-}
+
 
 # 4)
 # Notice how we've turned a list with an "X" and "Y"
@@ -65,9 +56,6 @@ center.list <- function(vars) {
 # a scalar integer representing the number of elements
 # in X and Y.
 
-make_variables <- function(X, Y) {
-    v <- list(X=X, Y=Y, N=length(X))
-}
 
 
 # 5)
@@ -76,10 +64,6 @@ make_variables <- function(X, Y) {
 # however, we're going to need it later. Write a new one
 # here that will just "mask" the old one for now:
 
-center.variables <- function(vars) {
-    make_variables(X = vars$X - mean(vars$X),
-                   Y = vars$Y - mean(vars$Y))
-}
 
 
 # 6)
@@ -113,11 +97,11 @@ center.variables <- function(vars) {
 # to query the class of this object, as in the test.
 # See what you get!
 
-make_variables <- function(X, Y) {
-    v <- list(X=X, Y=Y, N=length(X))
-    class(v) <- "variables"
-    v
-}
+## make_variables <- function(X, Y) {
+##     v <- list(X=X, Y=Y, N=length(X))
+##     class(v) <- "variables"
+##     v
+## }
 
 
 
@@ -126,9 +110,9 @@ make_variables <- function(X, Y) {
 #
 # Uncomment the following function:
 
-center <- function(vars) {
-    UseMethod("center")
-}
+## center <- function(vars) {
+##     UseMethod("center")
+## }
 
 # 2 previous tests should now fail. Now change your first
 # "center" function to be named "center.list" and your second
@@ -157,10 +141,6 @@ center <- function(vars) {
 # Let's make "mean.variables" return a "variables"
 # class with X set to the mean of the original X vector
 # and Y the mean of the original Y vector.
-
-mean.variables <- function(vars) {
-    make_variables(X=mean(vars$X), Y=mean(vars$Y))
-}
 
 
 ################################################
